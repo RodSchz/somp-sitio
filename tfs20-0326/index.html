@@ -52,7 +52,7 @@ th.opc,td.opc{display:none}
 }
 </style></head><body>
 <h1>TFS20-0326</h1>
-<p class="meta">Actualizado el 13/08/2026 01:15</p>
+<p class="meta">Actualizado el 13/08/2026 01:20</p>
 <div class="cifras"><div class="cifra"><b>3</b><span>Diseños aceptados</span></div><div class="cifra"><b>0</b><span>Diseños rechazados</span></div><div class="cifra"><b>8</b><span>No admitidos</span></div><div class="cifra"><b>7 de 200</b><span>Posiciones ocupadas</span></div><div class="cifra"><b>1–4</b><span>Copias por diseño</span></div></div>
 <div class="reja">
   <div class="mapa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 620" width="100%" role="img">
@@ -300,9 +300,23 @@ function mostrar(codigo){
     return;
   }
   panel.innerHTML = '<h3>'+codigo+'</h3>'+
-    '<img src="chips/'+archivo+'" alt="Layout del diseño '+codigo+'">'+
+    '<img src="chips/'+archivo+'" alt="Layout del diseño '+codigo+'" onload="avisarAltura()">'+
     '<p class="vacio"><a href="chips/'+archivo+'" target="_blank">Abrir en grande</a></p>';
+  avisarAltura();
 }
+
+// Squarespace embebe esta pagina en un iframe, que no sabe cuanto mide su
+// contenido: sin esto habria que fijar una altura a ojo y la tabla quedaria
+// con su propia barra de desplazamiento dentro de la pagina. Aqui se avisa la
+// altura real y el contenedor se ajusta. Solo se manda un numero, asi que no
+// hay nada que proteger en el envio; quien escucha si debe validar el origen.
+function avisarAltura(){
+  if(window.parent === window) return;
+  window.parent.postMessage(
+    {somp:'altura', altura: document.documentElement.scrollHeight}, '*');
+}
+window.addEventListener('load', avisarAltura);
+window.addEventListener('resize', avisarAltura);
 
 document.querySelectorAll('.casilla').forEach(g=>{
   g.addEventListener('click',()=>mostrar(g.dataset.codigo));
@@ -317,6 +331,8 @@ busca.addEventListener('input',()=>{
   document.querySelectorAll('tbody tr').forEach(tr=>{
     tr.classList.toggle('oculta', q && !tr.textContent.toLowerCase().includes(q));
   });
+  // Filtrar cambia cuantas filas se ven, y con eso la altura.
+  avisarAltura();
 });
 </script>
 </body></html>
