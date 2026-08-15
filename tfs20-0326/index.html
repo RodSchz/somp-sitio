@@ -52,15 +52,17 @@ th.opc,td.opc{display:none}
 }
 </style></head><body>
 <h1>TFS20-0326</h1>
-<p class="meta">Actualizado el 14/08/2026 14:38</p>
-<div class="cifras"><div class="cifra"><b>0</b><span>Diseños aceptados</span></div><div class="cifra"><b>0</b><span>Diseños rechazados</span></div><div class="cifra"><b>0</b><span>No admitidos</span></div><div class="cifra"><b>0 de 200</b><span>Posiciones ocupadas</span></div><div class="cifra"><b>0–0</b><span>Copias por diseño</span></div></div>
+<p class="meta">Actualizado el 14/08/2026 19:25</p>
+<div class="cifras"><div class="cifra"><b>1</b><span>Diseños aceptados</span></div><div class="cifra"><b>0</b><span>Diseños rechazados</span></div><div class="cifra"><b>3</b><span>No admitidos</span></div><div class="cifra"><b>2 de 200</b><span>Posiciones ocupadas</span></div><div class="cifra"><b>2–2</b><span>Copias por diseño</span></div></div>
 <div class="reja">
   <div class="mapa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 620" width="100%" role="img">
 <title>TFS20-0326</title>
 <circle cx="310.0" cy="310.0" r="292.5" fill="none" stroke="#B4B2A9" stroke-width="1.5"/>
 <circle cx="310.0" cy="310.0" r="263.2" fill="none" stroke="#D3D1C7" stroke-width="1" stroke-dasharray="4 3"/>
-<g><title>J10 libre</title><rect x="279.3" y="279.3" width="29.2" height="29.2" rx="1" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/></g>
-<g><title>K10 libre</title><rect x="311.5" y="279.3" width="29.2" height="29.2" rx="1" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/></g>
+<g class="casilla" data-codigo="CIDESI_ADMIN02-A"><title>CIDESI_ADMIN02-A · CIDESI</title><rect x="279.3" y="279.3" width="29.2" height="29.2" rx="1" fill="#1D9E75" stroke="#0F6E56" stroke-width="0.5"/></g>
+<text x="293.9" y="296.9" text-anchor="middle" font-size="8.1" fill="#04342C" font-family="sans-serif">CIDESI</text>
+<g class="casilla" data-codigo="CIDESI_ADMIN02-A"><title>CIDESI_ADMIN02-A · CIDESI</title><rect x="311.5" y="279.3" width="29.2" height="29.2" rx="1" fill="#1D9E75" stroke="#0F6E56" stroke-width="0.5"/></g>
+<text x="326.1" y="296.9" text-anchor="middle" font-size="8.1" fill="#04342C" font-family="sans-serif">CIDESI</text>
 <g><title>K11 libre</title><rect x="311.5" y="247.1" width="29.2" height="29.2" rx="1" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/></g>
 <g><title>J11 libre</title><rect x="279.3" y="247.1" width="29.2" height="29.2" rx="1" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/></g>
 <g><title>I11 libre</title><rect x="247.1" y="247.1" width="29.2" height="29.2" rx="1" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/></g>
@@ -278,9 +280,9 @@ th.opc,td.opc{display:none}
 <div class="tabla">
 <table><thead><tr><th>Código</th><th class="opc">Institución</th><th>Estado</th>
 <th>Motivo</th><th></th></tr></thead>
-<tbody></tbody></table></div>
+<tbody><tr><td><strong>CIDESI_ADMIN02-A</strong></td><td class="opc">CIDESI</td><td><span class="pill si">Aceptado</span></td><td class="motivo"></td><td><button class="ver" data-codigo="CIDESI_ADMIN02-A">ver</button></td></tr><tr><td><strong>CIDESI_ADMIN02</strong></td><td class="opc">CIDESI</td><td><span class="pill no">No admitido</span></td><td class="motivo">El nombre del diseño debe ser tu código asignado, un guion y un sufijo. Ejemplo: CIDESI_ADMIN02-A. Recibido: CIDESI_ADMIN02-B</td><td></td></tr><tr><td><strong>CIDESI_ADMIN02</strong></td><td class="opc">CIDESI</td><td><span class="pill no">No admitido</span></td><td class="motivo">El nombre del diseño debe ser tu código asignado, un guion y un sufijo. Ejemplo: CIDESI_ADMIN02-A. Recibido: CIDESI_ADMIN02-A</td><td></td></tr><tr><td><strong>CIDESI_ADMIN01</strong></td><td class="opc">CIDESI</td><td><span class="pill no">No admitido</span></td><td class="motivo">El código asignado CIDESI_ADMIN01 no está autorizado en la corrida TFS20-0326.</td><td></td></tr></tbody></table></div>
 <script>
-const vistas = {};
+const vistas = {"CIDESI_ADMIN02-A": "cidesi-admin02-a.svg"};
 const panel = document.getElementById('panel');
 
 // Se usa <img> y no fetch(): al abrir la pagina como file:// el navegador
